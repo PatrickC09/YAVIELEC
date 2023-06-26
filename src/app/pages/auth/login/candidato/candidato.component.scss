@@ -119,12 +119,12 @@ form .fields .input-field{
     align-items: center;
     justify-content: center;
     height: 45px;
-    max-width: 200px;
+    max-width: 160px;
     width: 100%;
     border: none;
     outline: none;
     color: #fff;
-    border-radius: 5px;
+    border-radius: 13px;
     margin: 10px 0;
     background-color: #00246E;
     transition: all 0.3s linear;
@@ -181,3 +181,69 @@ p{
     font-weight: bold;
     color: #000000;
 }
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 30px;
+  }
+  
+  .image-button {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #0047FF;
+    border: none;
+    border-radius: 4px;
+    font-size: 13px;
+    color: #ffffff;
+    margin-bottom: 10px;
+    width: 130px;
+    cursor: pointer;
+  }
+  
+  .image-button span {
+    margin-right: 10px;
+    text-align: left;
+  }
+  
+  .image-button img {
+    height: 20px;
+    width: 20px;
+    margin-left: auto;
+  }
+  
+  //Parrafo CSS
+
+  .container-p {
+    display: flex;
+    align-items: center;
+  }
+
+  .left {
+    display: flex;
+    align-items: center;
+  }
+
+  .image-p {
+    width: 15px;
+    margin-right: 10px; 
+  }
+  
+  .text {
+    flex-grow: 1;
+    margin-right: 10px;
+    font-size: 15px;
+  }
+
+  .button-p {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px;
+    border: none;
+    width: 170px;
+    cursor: pointer;
+    background-color: transparent;
+  }

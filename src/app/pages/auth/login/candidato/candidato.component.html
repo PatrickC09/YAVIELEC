@@ -14,7 +14,7 @@
     <div class="container">
         <header>Instituto Superior Tecnológico de Turismo y Patrimonio</header>
 
-        <form action="#" style="height: 550px;">
+        <form action="#" style="height: 460px;">
             <div class="form first">
                 <div class="details personal">
                     <span class="title">Registro de Candidato</span>
@@ -87,7 +87,7 @@
 
                         <div class="input-field">
                             <label>Logo de la Lista</label>
-                            <input type="file" id="file-upload" accept=".png, .jpg, .jpeg">
+                            <input type="file" id="file-upload" accept=".png, .jpg, .jpeg" required>
                             
                         </div>
 
@@ -108,27 +108,48 @@
                     <button class="nextBtn">
                         <span class="btnText">Registrar Lista</span>
                     </button>
+
                     
-                    <p>Artículo 11 del reglamento de elecciones del IST Yavirac.
-                        De las candidaturas. - Una vez efectuada la convocatoria a elecciones, el Secretario del Consejo Electoral receptará las candidaturas de los postulantes, dentro del plazo establecido en el cronograma de acuerdo a la ficha de inscripción que determine el Consejo Electoral.
-                        
-                        Las candidaturas deberán presentarse en lista, respetando la equidad de género, igualdad de oportunidades y equidad de conformidad a lo establecido en la Constitución de la República y en la Ley Orgánica de Educación Superior.
-                        </p>
+                      
                 </div> 
         </form>
-        
+        <div class="container-p">
+            <div class="left">
+                <button class="button-p" onclick="window.location.href = 'https://www.twitch.tv'">
+                    <span class="image-container">
+                      <img src="./assets/back.png" alt="Imagen" class="image-p">
+                    </span>
+                    <span class="text">Volver al Inicio</span>
+                  </button>
+            </div>
+            <p>Artículo 11 del reglamento de elecciones del IST Yavirac.
+                De las candidaturas. - Una vez efectuada la convocatoria a elecciones, el Secretario del Consejo Electoral receptará las candidaturas de los postulantes, dentro del plazo establecido en el cronograma de acuerdo a la ficha de inscripción que determine el Consejo Electoral.
+                
+                Las candidaturas deberán presentarse en lista, respetando la equidad de género, igualdad de oportunidades y equidad de conformidad a lo establecido en la Constitución de la República y en la Ley Orgánica de Educación Superior.</p>
+          </div>
     </div>
-    <button class="nextBtn">
-        <span class="btnText">Descargar Reglamento</span>
-    </button>
-    <button class="nextBtn">
-        <span class="btnText">Descargar Ficha</span>
-    </button>
-    <button class="nextBtn">
-        <span class="btnText">Descargar Requisitos</span>
-    </button>
-    <button class="nextBtn">
-        <span class="btnText">Adjuntar Requisitos</span>
-    </button>
+    <div class="button-container">
+        <button class="image-button">
+          <span>Descargar
+            <br>Reglamento</span>
+          <img src="./assets/download.png" alt="Imagen Botón 1">
+        </button>
+        <button class="image-button">
+          <span>Descargar
+            <br>Ficha</span>
+          <img src="./assets/download.png" alt="Imagen Botón 2">
+        </button>
+        <button class="image-button">
+          <span>Descargar
+            <br>Requisitos</span>
+          <img src="./assets/download.png" alt="Imagen Botón 3">
+        </button>
+        <button class="image-button">
+          <span>Adjuntar
+            <br>Requisitos</span>
+          <img src="./assets/attach.png" alt="Imagen Botón 4">
+        </button>
+      </div>
+      
 </body>
 </html>
