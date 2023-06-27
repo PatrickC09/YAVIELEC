@@ -14,7 +14,7 @@
     <div class="container">
         <header>Instituto Superior Tecnológico de Turismo y Patrimonio</header>
 
-        <form style="height: 460px;">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()" style="height: 460px;">
             <div class="form first">
                 <div class="details personal">
                     <span class="title">Registro de Candidato</span>
@@ -22,43 +22,74 @@
                     <div class="fields">
                         <div class="input-field">
                             <label>Nombre de la Lista</label>
-                            <input type="text" required>
+                            <input type="text" formControlName="nombreLista">
+                            <small *ngIf="form.controls['nombreLista'].errors && form.controls['nombreLista'].touched">
+                                El campo debe ser Completado
+                            </small>
+                            
                         </div>
 
                         <div class="input-field">
                             <div class="input-container">
                             <label>Datos del Presidente</label>
-                            <input type="text" placeholder="Nombre" required>
-                            <input type="text" placeholder="Correo" required>
+                            <input type="text" placeholder="Nombre" formControlName="datosPresidenteNombre">
+                            <small *ngIf="form.controls['datosPresidenteNombre'].errors && form.controls['datosPresidenteNombre'].touched">
+                                El campo debe ser Completado
+                            </small>
+                            <input type="email" placeholder="Correo" formControlName="datosPresidenteCorreo">
+                            <small *ngIf="form.controls['datosPresidenteCorreo'].errors && form.controls['datosPresidenteCorreo'].touched">
+                                El campo debe ser Completado
+                            </small>
                             </div>
                         </div>
 
                         <div class="input-field">
                             <div class="input-container">
                             <label>Datos del Vicepresidente</label>
-                            <input type="text" placeholder="Nombre" required>
-                            <input type="text" placeholder="Correo" required>
+                            <input type="text" placeholder="Nombre" formControlName="datosViceNombre">
+                            <small *ngIf="form.controls['datosViceNombre'].errors && form.controls['datosViceNombre'].touched">
+                                El campo debe ser Completado
+                            </small>
+                            <input type="text" placeholder="Correo" formControlName="datosViceCorreo">
+                            <small *ngIf="form.controls['datosViceCorreo'].errors && form.controls['datosViceCorreo'].touched">
+                                El campo debe ser Completado
+                            </small>
                             </div>
                         </div>
 
                         <div class="input-field">
                             <label>Eslogan de la Lista</label>
-                            <input type="text" required>
+                            <input type="text" formControlName="eslogan">
+                            <small *ngIf="form.controls['eslogan'].errors && form.controls['eslogan'].touched">
+                                El campo debe ser Completado
+                            </small>
                         </div>
 
                         <div class="input-field">
                             <div class="input-container">
                                 <label>Datos del Secretario/a</label>
-                                <input type="text" placeholder="Nombre" required>
-                                <input type="text" placeholder="Correo" required>
+                                <input type="text" placeholder="Nombre" formControlName="datosSecretarioNombre">
+                            <small *ngIf="form.controls['datosSecretarioNombre'].errors && form.controls['datosSecretarioNombre'].touched">
+                                El campo debe ser Completado
+                            </small>
+                            <input type="text" placeholder="Correo" formControlName="datosSecretarioCorreo">
+                            <small *ngIf="form.controls['datosSecretarioCorreo'].errors && form.controls['datosSecretarioCorreo'].touched">
+                                El campo debe ser Completado
+                            </small>
                                 </div>
                         </div>
 
                         <div class="input-field">
                             <div class="input-container">
                                 <label>Datos del Tesorero/a</label>
-                                <input type="text" placeholder="Nombre" required>
-                                <input type="text" placeholder="Correo" required>
+                                <input type="text" placeholder="Nombre" formControlName="datosTesoreroNombre">
+                            <small *ngIf="form.controls['datosTesoreroNombre'].errors && form.controls['datosTesoreroNombre'].touched">
+                                El campo debe ser Completado
+                            </small>
+                            <input type="text" placeholder="Correo" formControlName="datosTesoreroCorreo">
+                            <small *ngIf="form.controls['datosTesoreroCorreo'].errors && form.controls['datosTesoreroCorreo'].touched">
+                                El campo debe ser Completado
+                            </small>
                                 </div>
                         </div>
                     </div>
@@ -66,53 +97,77 @@
                     <div class="fields">
                         <div class="input-field">
                             <label>Número de la Lista</label>
-                            <input type="text" required>
+                            <input type="text" formControlName="numeroLista">
+                            <small *ngIf="form.controls['numeroLista'].errors && form.controls['numeroLista'].touched">
+                                El campo debe ser Completado
+                            </small>
                         </div>
 
                         <div class="input-field">
                             <div class="input-container">
                                 <label>Datos del Vocal 1</label>
-                                <input type="text" placeholder="Nombre" required>
-                                <input type="text" placeholder="Correo" required>
+                                <input type="text" placeholder="Nombre" formControlName="datosVocal1Nombre">
+                            <small *ngIf="form.controls['datosVocal1Nombre'].errors && form.controls['datosVocal1Nombre'].touched">
+                                El campo debe ser Completado
+                            </small>
+                            <input type="text" placeholder="Correo" formControlName="datosVocal1Correo">
+                            <small *ngIf="form.controls['datosVocal1Correo'].errors && form.controls['datosVocal1Correo'].touched">
+                                El campo debe ser Completado
+                            </small>
                                 </div>
                         </div>
 
                         <div class="input-field">
                             <div class="input-container">
                                 <label>Datos del Vocal 2</label>
-                                <input type="text" placeholder="Nombre" required>
-                                <input type="text" placeholder="Correo" required>
+                                <input type="text" placeholder="Nombre" formControlName="datosVocal2Nombre">
+                            <small *ngIf="form.controls['datosVocal2Nombre'].errors && form.controls['datosVocal2Nombre'].touched">
+                                El campo debe ser Completado
+                            </small>
+                            <input type="text" placeholder="Correo" formControlName="datosVocal2Correo">
+                            <small *ngIf="form.controls['datosVocal2Correo'].errors && form.controls['datosVocal2Correo'].touched">
+                                El campo debe ser Completado
+                            </small>
                                 </div>
                         </div>
 
                         <div class="input-field">
                             <label>Logo de la Lista</label>
-                            <input type="file" id="file-upload" accept=".png, .jpg, .jpeg" required>
-                            
+                            <input type="file" id="file-upload" accept=".png, .jpg, .jpeg" formControlName="logoLista">
+                            <small *ngIf="form.controls['logoLista'].errors && form.controls['logoLista'].touched">
+                                El campo debe ser Completado
+                            </small>
                         </div>
 
                         <div class="input-field">
                             <div class="input-container">
                                 <label>Datos del Vocal 3</label>
-                                <input type="text" placeholder="Nombre" required>
-                                <input type="text" placeholder="Correo" required>
+                                <input type="text" placeholder="Nombre" formControlName="datosVocal3Nombre">
+                            <small *ngIf="form.controls['datosVocal3Nombre'].errors && form.controls['datosVocal3Nombre'].touched">
+                                El campo debe ser Completado
+                            </small>
+                            <input type="text" placeholder="Correo" formControlName="datosVocal3Correo">
+                            <small *ngIf="form.controls['datosVocal3Correo'].errors && form.controls['datosVocal3Correo'].touched">
+                                El campo debe ser Completado
+                            </small>
                                 </div>
                         </div>
 
                         <div class="input-field">
                             <label>Registrar Propuesta</label>
-                            <input type="text" required>
+                            <input type="text" formControlName="registrarPropuesta">
+                            <small *ngIf="form.controls['registrarPropuesta'].errors && form.controls['registrarPropuesta'].touched">
+                                El campo debe ser Completado
+                            </small>
                         </div>
                     </div>
-                    <button>
-                        <span>Registrar Lista</span>
-                    </button>
+                    <button type="submit">Registrar</button>
                 </div> 
         </form>
         
         <div class="container-p">
             <div class="left">
-                <button class="button-p" onclick="window.location.href = 'https://www.twitch.tv'">
+                <button class="button-p" routerLink="/login">
                     <span class="image-container">
                       <img src="./assets/back.png" alt="Imagen" class="image-p">
                     </span>

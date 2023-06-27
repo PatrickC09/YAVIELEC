@@ -13,7 +13,7 @@ import { RouterModule } from '@angular/router';
 import { PerfilCandidatoComponent } from './pages/auth/solicitud-candidatos/perfil-candidato/perfil-candidato.component';
 import { ObservacionesComponent } from './pages/auth/solicitud-candidatos/observaciones/observaciones.component';
 
-
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -29,7 +29,10 @@ import { ObservacionesComponent } from './pages/auth/solicitud-candidatos/observ
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule
+    RouterModule,
+
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
