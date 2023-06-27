@@ -6,6 +6,7 @@ import { MenuComponent } from './pages/auth/menu/menu.component';
 import { CandidatoComponent } from './pages/auth/candidato/candidato.component';
 import { SolicitudCandidatosComponent } from './pages/auth/solicitud-candidatos/solicitud-candidatos.component';
 import { PerfilCandidatoComponent } from './pages/auth/solicitud-candidatos/perfil-candidato/perfil-candidato.component';
+import { ObservacionesComponent } from './pages/auth/solicitud-candidatos/observaciones/observaciones.component';
 
 
 
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'candidato', component: CandidatoComponent },
   { path: 'solicitud', component: SolicitudCandidatosComponent },
   { path: 'perfil-candidato', component: PerfilCandidatoComponent },
+  { path: 'observaciones', component: ObservacionesComponent },
 ];
 
 @NgModule({

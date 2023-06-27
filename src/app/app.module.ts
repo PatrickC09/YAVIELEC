@@ -11,6 +11,7 @@ import { CandidatoComponent } from './pages/auth/candidato/candidato.component';
 import { SolicitudCandidatosComponent } from './pages/auth/solicitud-candidatos/solicitud-candidatos.component';
 import { RouterModule } from '@angular/router';
 import { PerfilCandidatoComponent } from './pages/auth/solicitud-candidatos/perfil-candidato/perfil-candidato.component';
+import { ObservacionesComponent } from './pages/auth/solicitud-candidatos/observaciones/observaciones.component';
 
 
 
@@ -22,7 +23,8 @@ import { PerfilCandidatoComponent } from './pages/auth/solicitud-candidatos/perf
     HeaderComponent,
     MenuComponent,
     SolicitudCandidatosComponent,
-    PerfilCandidatoComponent
+    PerfilCandidatoComponent,
+    ObservacionesComponent
   ],
   imports: [
     BrowserModule,

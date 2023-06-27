@@ -8,27 +8,32 @@
 <body>
     <app-menu></app-menu>
     <div class="container">
-        <h1>Perfil del Candidato</h1>
+        <h1 class="perfil">Perfil del Candidato</h1>
         <div class="container-p">
-            <div class="left">
                 <button class="button-p" routerLink="/solicitud">
                     <span class="image-container">
                       <img src="./assets/back.png" alt="Imagen" class="image-p">
                     </span>
-                    <span class="text">Volver al Inicio</span>
+                    <span class="text">Volver atras</span>
                   </button>
-            </div>
         </div>
-        <h1>Información</h1>
+        <div class="contenedor-logo">
+            <img src="https://pbs.twimg.com/profile_images/953015820669636609/9cv2czeD_400x400.jpg" alt="" class="logo-lista">
+            <div class="texto">LISTA #1</div>
+            <div class="texto">FUERZA YAVIRAC</div>
+        </div>
+        <div class="contenedor-2">
+            <h1>Información</h1>
         <h3>Requisitos:</h3>
-        <button>
+        <button class="requisito-b">
             <span>Ver Requisitos</span>
         </button>
         <h3>Propuesta:</h3>
         <textarea class="input-s"></textarea>
-        <button>
+        <button class="observaciones-b" routerLink="/observaciones">
             <span>Observaciones</span>
         </button>
+        </div>
     </div>
 </body>
 </html>
