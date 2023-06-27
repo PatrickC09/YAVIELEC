@@ -14,7 +14,7 @@
     <div class="container">
         <header>Instituto Superior Tecnológico de Turismo y Patrimonio</header>
 
-        <form action="#" style="height: 460px;">
+        <form style="height: 460px;">
             <div class="form first">
                 <div class="details personal">
                     <span class="title">Registro de Candidato</span>
@@ -104,15 +104,12 @@
                             <input type="text" required>
                         </div>
                     </div>
-
-                    <button class="nextBtn">
-                        <span class="btnText">Registrar Lista</span>
+                    <button (click)="openConfirmationDialog()">
+                        <span>Registrar Lista</span>
                     </button>
-
-                    
-                      
                 </div> 
         </form>
+        
         <div class="container-p">
             <div class="left">
                 <button class="button-p" onclick="window.location.href = 'https://www.twitch.tv'">

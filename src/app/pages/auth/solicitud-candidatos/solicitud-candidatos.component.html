@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <app-menu></app-menu>
+    <div class="container">
+        <h1>Solicitudes</h1>
+    <div class="buttons-orden">
+        <div class="button-container">
+            <button>
+                <span>Agregar</span>
+            </button>
+            <button>
+                <span>Imprimir</span>
+            </button>
+        </div>
+        <form class="search">
+            <input type="search" id="search" name="search">
+            <input type="submit" value="Buscar">
+          </form>
+        </div>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Logo</th>
+                <th scope="col">Nombre Lista</th>
+                <th scope="col">Numero de Lista</th>
+                <th scope="col">Estado</th>
+                <th scope="col">Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+                <td>
+                    <a routerLink="/perfil-candidato">
+                    <button class="image-button">
+                        <img src="./assets/edit.png" alt="Texto alternativo de la imagen">
+                      </button>
+                    </a>
+                      <button class="image-button">
+                        <img src="./assets/delete.png" alt="Texto alternativo de la imagen">
+                      </button>
+                    <button>
+                        <span>Ver más</span>
+                    </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+
+</body>
+</html>

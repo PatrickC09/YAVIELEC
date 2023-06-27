@@ -1,0 +1,42 @@
+.container{
+    margin-left: 200px;
+}
+
+.container-p {
+    display: flex;
+    align-items: center;
+  }
+
+  .left {
+    display: flex;
+    align-items: center;
+  }
+
+  .image-p {
+    width: 15px;
+    margin-right: 10px; 
+  }
+  
+  .text {
+    flex-grow: 1;
+    margin-right: 10px;
+    font-size: 15px;
+  }
+
+.button-p {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px;
+    border: none;
+    width: 170px;
+    cursor: pointer;
+    background-color: transparent;
+  }
+
+  .input-s {
+    height: 100px;
+    width: 300px;
+    resize: none;
+    overflow: auto;
+  }
