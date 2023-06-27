@@ -6,17 +6,22 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/auth/login/login/login.component';
 import { CandidatoComponent } from './pages/auth/login/candidato/candidato.component';
 import { HeaderComponent } from './pages/auth/login/header/header.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { ResetPasswordComponent } from './pages/auth/login/reset-password/reset-password.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     CandidatoComponent,
-    HeaderComponent
+    HeaderComponent,
+    ResetPasswordComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
