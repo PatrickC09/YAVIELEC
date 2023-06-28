@@ -8,14 +8,20 @@
 <body>
     <app-menu></app-menu>
     <div class="container">
-        <h1>Candidatos</h1>
+        <h1>Usuarios</h1>
     <div class="buttons-orden">
         <div class="button-container">
             <button>
-                <span>Agregar</span>
+                <span>Importar Usuarios</span>
+            </button>
+            <button (click)="exportToExcel()">
+                <span>Exportar usuarios</span>
             </button>
             <button>
-                <span>Imprimir</span>
+                <span>Descargar Plantilla</span>
+            </button>
+            <button>
+                <span>Agregar Usuario</span>
             </button>
         </div>
         <form class="search">
@@ -26,9 +32,8 @@
         <table class="table">
             <thead>
               <tr>
-                <th scope="col">Logo</th>
-                <th scope="col">Nombre y Apellidos</th>
-                <th scope="col">Correo</th>
+                <th scope="col">C.I.</th>
+                <th scope="col">Nombres y Apellidos</th>
                 <th scope="col">Carrera</th>
                 <th scope="col">Nivel</th>
                 <th scope="col">Acciones</th>
@@ -36,23 +41,17 @@
             </thead>
             <tbody>
               <tr>
-                <th scope="row">1</th>
-                <td>ALEX XAVIER TACO VELEZ</td>
-                <td>ax.taco@yavirac.deu.ec</td>
-                <td>Marketing</td>
+                <td>1712345678</td>
+                <td>Augusto Cesar Veintimilla Tercero</td>
+                <td>Arte  Culinario </td>
                 <td>1</td>
                 <td>
-
-                    <button class="image-button">
+                    <button class="image-button" >
                         <img src="./assets/edit.png" alt="Texto alternativo de la imagen">
                       </button>
-
                       <button class="image-button" (click)="confirmarEliminacion()">
                         <img src="./assets/delete.png" alt="Texto alternativo de la imagen">
                       </button>
-                    <button routerLink="/info-candidato">
-                        <span>Perfil</span>
-                    </button>
                 </td>
               </tr>
             </tbody>

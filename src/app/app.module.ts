@@ -9,7 +9,7 @@ import { LoginComponent } from './pages/auth/login/login/login.component';
 import { HeaderComponent } from './pages/auth/header/header.component';
 import { MenuComponent } from './pages/auth/menu/menu.component';
 import { CandidatoComponent } from './pages/auth/candidato/candidato.component';
-import { SolicitudCandidatosComponent } from './pages/auth/solicitud-candidatos/solicitud-candidatos.component';
+import { SolicitudCandidatosComponent } from './pages/auth/solicitud-candidatos/solicitud/solicitud-candidatos.component';
 import { RouterModule } from '@angular/router';
 import { PerfilCandidatoComponent } from './pages/auth/solicitud-candidatos/perfil-candidato/perfil-candidato.component';
 import { ObservacionesComponent } from './pages/auth/solicitud-candidatos/observaciones/observaciones.component';
@@ -19,6 +19,10 @@ import { VerCandidatoComponent } from './pages/auth/solicitud-candidatos/ver-can
 import { InfoCandidatoComponent } from './pages/auth/solicitud-candidatos/info-candidato/info-candidato.component';
 
 import { ResetPasswordComponent } from './pages/auth/login/reset-password/reset-password.component'
+import { HttpClientModule } from '@angular/common/http';
+import { UsuariosComponent } from './pages/auth/usuarios/usuarios.component';
+;
+
 
 
 @NgModule({
@@ -35,6 +39,7 @@ import { ResetPasswordComponent } from './pages/auth/login/reset-password/reset-
     InfoCandidatoComponent,
     ObservacionesComponent,
     ResetPasswordComponent,
+    UsuariosComponent,
 
   ],
   imports: [
@@ -45,7 +50,8 @@ import { ResetPasswordComponent } from './pages/auth/login/reset-password/reset-
     FormsModule,
     ReactiveFormsModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

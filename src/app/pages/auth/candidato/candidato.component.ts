@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { CandidatosService } from './candidatos.service';
+import { CandidatosService } from '../../../service/candidatos.service';
 import Swal from 'sweetalert2';
 
 
@@ -10,6 +10,8 @@ import Swal from 'sweetalert2';
   styleUrls: ['./candidato.component.scss']
 })
 export class CandidatoComponent {
+  public archivoUrl: string = 'assets/reglamento.pdf';
+
   nombreLista: string = '';
   datosPresidenteNombre: string = '';
   datosPresidenteCorreo: string = '';
@@ -32,8 +34,10 @@ export class CandidatoComponent {
   
   form: FormGroup;
 
+
   constructor(private formBuilder: FormBuilder,
-              private candidatosService: CandidatosService) {
+              private candidatosService: CandidatosService,
+              ) {
     if (this.candidatosService.selectedCandidato){
       this.form = formBuilder.group({
         nombreLista: [this.candidatosService.selectedCandidato.nombreLista, [Validators.required, Validators.minLength(2)]],
@@ -148,6 +152,8 @@ export class CandidatoComponent {
   get idField() {
     return this.form.controls['id'];
   }
+
+
 
 }
 

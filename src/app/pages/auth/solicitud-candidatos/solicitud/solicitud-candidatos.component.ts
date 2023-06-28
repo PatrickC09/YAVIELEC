@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-ver-candidato',
-  templateUrl: './ver-candidato.component.html',
-  styleUrls: ['./ver-candidato.component.scss']
+  selector: 'app-solicitud-candidatos',
+  templateUrl: './solicitud-candidatos.component.html',
+  styleUrls: ['./solicitud-candidatos.component.scss']
 })
-
-export class VerCandidatoComponent {
+export class SolicitudCandidatosComponent {
   confirmarEliminacion() {
     const swalWithBootstrapButtons = Swal.mixin({
       customClass: {
@@ -18,8 +18,8 @@ export class VerCandidatoComponent {
     })
     
     swalWithBootstrapButtons.fire({
-      title: 'Eliminar Candidato',
-      text: "¿Esta seguro de eliminar este candidato?",
+      title: 'Eliminar Lista',
+      text: "¿Esta seguro de eliminar esta lista?",
       icon: 'warning',
       showCancelButton: true,
       confirmButtonText: 'Eliminar',
@@ -28,8 +28,8 @@ export class VerCandidatoComponent {
     }).then((result) => {
       if (result.isConfirmed) {
         swalWithBootstrapButtons.fire(
-          'Candidato Eliminado!',
-          'El candidado se ha eliminado con exito',
+          'Lista Eliminada!',
+          'Se ha eliminado la Lista con exito',
           'success'
         )
       } else if (
@@ -38,7 +38,7 @@ export class VerCandidatoComponent {
       ) {
         swalWithBootstrapButtons.fire(
           'Cancelado',
-          'Candidato no eliminado :)',
+          'Lista no eliminada :)',
           'error'
         )
       }
