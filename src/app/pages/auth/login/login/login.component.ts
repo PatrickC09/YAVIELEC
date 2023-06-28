@@ -26,16 +26,12 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     if (this.loginForm.valid) {
       alert('Usuario logeado con Exito ')
+      this.router.navigate(['candidato']);
     } else {
       alert('Usuario no registrado')
     }
   }
 
-  /**
-   * ingresar al sistema por rutas
-   */
-  clickIngresar(){
-    this.router.navigate(['candidato']);
-  }
+
 
 }
