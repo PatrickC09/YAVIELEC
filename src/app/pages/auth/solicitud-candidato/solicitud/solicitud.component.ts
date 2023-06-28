@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { CandidatosService } from 'src/app/service/candidatos.service';
+import { SolicitudService } from 'src/app/service/solicitud.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -19,11 +20,11 @@ export class SolicitudComponent {
     },
     buttonsStyling: false,
   });
-  constructor(private candidatoService: CandidatosService) {
+  constructor(private candidatoService: SolicitudService) {
     this.loadCandidato();
   }
   loadCandidato() {
-    this.candidatoService.loadCandidatos().subscribe(
+    this.candidatoService.loadListas().subscribe(
       (res) => {
         this.listarUsuario = <any>res;
         console.log(this.listarUsuario);

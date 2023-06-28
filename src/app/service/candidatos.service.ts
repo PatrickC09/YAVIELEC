@@ -10,21 +10,22 @@ export class CandidatosService {
   selectedCandidato: any = null;
 
   constructor(private http: HttpClient) {
-    this.loadCandidatos();
   }
 
   loadCandidatos() {
-  return this.http.get(this.url);
+    return this.http.get(this.url);
     this.candidatos = [];
     this.candidatos.push();
   }
 
   addCandidato(payload: any) {
-    this.candidatos.push(payload);
+    let data = Object.values(payload)
+    console.log("Data: "+ data);
+    return this.http.post(this.url , payload);
   }
 
   updateLista(id: string) {
-    return this.http.get(this.url+'/'+id)
+    return this.http.get(this.url + '/' + id);
   }
 
   deleteCandidato(id: number) {

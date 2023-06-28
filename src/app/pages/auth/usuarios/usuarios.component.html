@@ -40,11 +40,11 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>1712345678</td>
-                <td>Augusto Cesar Veintimilla Tercero</td>
-                <td>Arte  Culinario </td>
-                <td>1</td>
+              <tr  *ngFor="let usuario of data">
+                <td>{{usuario.cedula}}</td>
+                <td>{{usuario.nombre}} {{usuario.apellido}}</td>
+                <td>{{usuario.carrera}}</td>
+                <td>NIbel</td>
                 <td>
                     <button class="image-button" >
                         <img src="./assets/edit.png" alt="Texto alternativo de la imagen">
@@ -57,6 +57,6 @@
             </tbody>
           </table>
     </div>
-
+{{listarUsuario | json}}
 </body>
 </html>

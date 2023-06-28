@@ -10,7 +10,7 @@
 </head>
 <app-header></app-header>
 <body>
-    
+
     <div class="container">
         <header>Instituto Superior Tecnológico de Turismo y Patrimonio</header>
 
@@ -26,7 +26,7 @@
                             <small *ngIf="form.controls['nombreLista'].errors && form.controls['nombreLista'].touched">
                                 El campo debe ser Completado
                             </small>
-                            
+
                         </div>
 
                         <div class="input-field">
@@ -162,9 +162,9 @@
                         </div>
                     </div>
                     <button type="submit">Registrar</button>
-                </div> 
+                </div>
         </form>
-        
+
         <div class="container-p">
             <div class="left">
                 <button class="button-p" routerLink="/login">
@@ -176,7 +176,7 @@
             </div>
             <p>Artículo 11 del reglamento de elecciones del IST Yavirac.
                 De las candidaturas. - Una vez efectuada la convocatoria a elecciones, el Secretario del Consejo Electoral receptará las candidaturas de los postulantes, dentro del plazo establecido en el cronograma de acuerdo a la ficha de inscripción que determine el Consejo Electoral.
-                
+
                 Las candidaturas deberán presentarse en lista, respetando la equidad de género, igualdad de oportunidades y equidad de conformidad a lo establecido en la Constitución de la República y en la Ley Orgánica de Educación Superior.</p>
           </div>
     </div>
@@ -203,6 +203,8 @@
           <img src="./assets/attach.png" alt="Imagen Botón 4">
         </button>
       </div>
-      
+
+
 </body>
+{{form.value | json}}
 </html>

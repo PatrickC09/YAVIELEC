@@ -33,7 +33,7 @@ export class CandidatoComponent {
   registrarPropuesta: string = '';
 
   form: FormGroup;
-
+  data: any;
 
   constructor(private formBuilder: FormBuilder,
               private candidatosService: CandidatosService,
@@ -140,8 +140,10 @@ export class CandidatoComponent {
   }
 
   addCandidato() {
-    this.candidatosService.addCandidato(this.form.value);
-    console.log(this.candidatosService.candidatos);
+    this.candidatosService.addCandidato(this.form.value)
+    this.data = Object.values(this.form.value);
+    console.log("Desde componente" + this.data);
+
   }
 
   // updateCandidatos() {
