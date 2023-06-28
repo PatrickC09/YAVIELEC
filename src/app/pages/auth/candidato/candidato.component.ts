@@ -31,7 +31,7 @@ export class CandidatoComponent {
   datosVocal3Correo: string = '';
   logoLista: string = '';
   registrarPropuesta: string = '';
-  
+
   form: FormGroup;
 
 
@@ -95,7 +95,7 @@ export class CandidatoComponent {
         },
         buttonsStyling: false
       })
-      
+
       swalWithBootstrapButtons.fire({
         title: 'Esta seguro de que quiere registrar esta lista?',
         icon: 'warning',
@@ -130,8 +130,8 @@ export class CandidatoComponent {
     }
     console.log(this.form.valid);
   }
-  
- 
+
+
 
   validateForm() {
     if (this.nombreLista === '' && this.nombreLista.length <= 3) {
@@ -144,10 +144,10 @@ export class CandidatoComponent {
     console.log(this.candidatosService.candidatos);
   }
 
-  updateCandidatos() {
-    this.candidatosService.updateCandidato(this.idField.value, this.form.value);
-    console.log(this.candidatosService.candidatos);
-  }
+  // updateCandidatos() {
+  //   this.candidatosService.updateCandidato(this.idField.value, this.form.value);
+  //   console.log(this.candidatosService.candidatos);
+  // }
 
   get idField() {
     return this.form.controls['id'];

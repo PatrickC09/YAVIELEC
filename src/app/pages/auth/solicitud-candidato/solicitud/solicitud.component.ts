@@ -1,47 +1,76 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { CandidatosService } from 'src/app/service/candidatos.service';
 import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-solicitud',
   templateUrl: './solicitud.component.html',
-  styleUrls: ['./solicitud.component.scss']
+  styleUrls: ['./solicitud.component.scss'],
 })
 export class SolicitudComponent {
-  confirmarEliminacion() {
-    const swalWithBootstrapButtons = Swal.mixin({
-      customClass: {
-        confirmButton: 'btn btn-success',
-        cancelButton: 'btn btn-danger'
-      },
-      buttonsStyling: false
-    })
-    
-    swalWithBootstrapButtons.fire({
-      title: 'Eliminar Lista',
-      text: "¿Esta seguro de eliminar esta lista?",
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonText: 'Eliminar',
-      cancelButtonText: 'Cancelar',
-      reverseButtons: true
-    }).then((result) => {
-      if (result.isConfirmed) {
-        swalWithBootstrapButtons.fire(
-          'Lista Eliminada!',
-          'Se ha eliminado la Lista con exito',
-          'success'
-        )
-      } else if (
-        /* Read more about handling dismissals below */
-        result.dismiss === Swal.DismissReason.cancel
-      ) {
-        swalWithBootstrapButtons.fire(
-          'Cancelado',
-          'Lista no eliminada :)',
-          'error'
-        )
-      }
-    })
+  data: any;
+  tipoLista: any;
+  listarUsuario: any;
+  swalWithBootstrapButtons = Swal.mixin({
+    customClass: {
+      confirmButton: 'btn btn-success',
+      cancelButton: 'btn btn-danger',
+    },
+    buttonsStyling: false,
+  });
+  constructor(private candidatoService: CandidatosService) {
+    this.loadCandidato();
   }
+  loadCandidato() {
+    this.candidatoService.loadCandidatos().subscribe(
+      (res) => {
+        this.listarUsuario = <any>res;
+        console.log(this.listarUsuario);
+        this.data = Object.values(this.listarUsuario);
+        this.data = Object.values(this.data[0]);
+        this.tipoLista = Object.values(this.data[0].tipoLista)
+      },
+      (err) => console.log(err)
+    );
+  }
+
+  confirmarEliminacion() {
+    this.swalWithBootstrapButtons
+      .fire({
+        title: 'Eliminar Lista',
+        text: '¿Esta seguro de eliminar esta lista?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Eliminar',
+        cancelButtonText: 'Cancelar',
+        reverseButtons: true,
+      })
+      .then((result) => {
+        if (result.isConfirmed) {
+          this.swalWithBootstrapButtons.fire(
+            'Lista Eliminada!',
+            'Se ha eliminado la Lista con exito',
+            'success'
+          );
+        } else if (
+          /* Read more about handling dismissals below */
+          result.dismiss === Swal.DismissReason.cancel
+        ) {
+          this.swalWithBootstrapButtons.fire(
+            'Cancelado',
+            'Lista no eliminada :)',
+            'error'
+          );
+        }
+      });
+  }
+  editarLista(id:string) {
+
+    console.log(    this.candidatoService.updateLista(id));
+
+  }
+}
+export interface Lista {
+  data: any;
 }

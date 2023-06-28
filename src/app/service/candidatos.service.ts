@@ -1,34 +1,34 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CandidatosService {
+  url = 'http://localhost:3000/api/v1/listas';
   candidatos: any[] = [];
   selectedCandidato: any = null;
 
-  constructor() { 
+  constructor(private http: HttpClient) {
     this.loadCandidatos();
-   }
+  }
 
-   private loadCandidatos() {
+  loadCandidatos() {
+  return this.http.get(this.url);
     this.candidatos = [];
-    this.candidatos.push(
-      {nombreLista: 'Yavielec'},
-    );
-   }
+    this.candidatos.push();
+  }
 
   addCandidato(payload: any) {
     this.candidatos.push(payload);
   }
 
-  updateCandidato(id: number, payload: any) {
-    const index = this.candidatos.findIndex(candidato => candidato.id === id);
-    this.candidatos[index] = payload;
+  updateLista(id: string) {
+    return this.http.get(this.url+'/'+id)
   }
 
   deleteCandidato(id: number) {
-    const index = this.candidatos.findIndex(candidato => candidato.id === id);
+    const index = this.candidatos.findIndex((candidato) => candidato.id === id);
     if (index > -1) {
       this.candidatos.splice(index, 1);
     }

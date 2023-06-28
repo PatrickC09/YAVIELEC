@@ -26,6 +26,7 @@
         <table class="table">
             <thead>
               <tr>
+                <th scope="col">Id</th>
                 <th scope="col">Logo</th>
                 <th scope="col">Nombre Lista</th>
                 <th scope="col">Numero de Lista</th>
@@ -34,13 +35,14 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>FUERZA YAVIRAC</td>
-                <td>LISTA # 1</td>
-                <td>Aprobado</td>
+              <tr *ngFor="let candidato of data">
+                <th scope="row">{{candidato.id}}</th>
+                <td>{{candidato.logo}}</td>
+                <td>{{candidato.nombre}}</td>
+                <td>{{candidato.nro_lista}}</td>
+                <td>{{candidato.estado}}</td>
                 <td>
-                    <a routerLink="/perfil-candidato">
+                    <a (click)="editarLista(candidato.id)">
                     <button class="image-button">
                         <img src="./assets/edit.png" alt="Texto alternativo de la imagen">
                       </button>
@@ -56,6 +58,5 @@
             </tbody>
           </table>
     </div>
-
 </body>
 </html>
