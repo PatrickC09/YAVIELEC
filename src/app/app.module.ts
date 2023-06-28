@@ -14,6 +14,8 @@ import { PerfilCandidatoComponent } from './pages/auth/solicitud-candidatos/perf
 import { ObservacionesComponent } from './pages/auth/solicitud-candidatos/observaciones/observaciones.component';
 
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { VerCandidatoComponent } from './pages/auth/solicitud-candidatos/ver-candidato/ver-candidato.component';
+import { InfoCandidatoComponent } from './pages/auth/solicitud-candidatos/info-candidato/info-candidato.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     MenuComponent,
     SolicitudCandidatosComponent,
     PerfilCandidatoComponent,
-    ObservacionesComponent
+    ObservacionesComponent,
+    VerCandidatoComponent,
+    InfoCandidatoComponent
   ],
   imports: [
     BrowserModule,

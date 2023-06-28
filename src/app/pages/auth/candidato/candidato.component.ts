@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { CandidatosService } from './candidatos.service';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -83,10 +84,50 @@ export class CandidatoComponent {
   onSubmit() {
     if (this.form.valid) {
       this.addCandidato();
+      const swalWithBootstrapButtons = Swal.mixin({
+        customClass: {
+          confirmButton: 'btn btn-success',
+          cancelButton: 'btn btn-danger'
+        },
+        buttonsStyling: false
+      })
+      
+      swalWithBootstrapButtons.fire({
+        title: 'Esta seguro de que quiere registrar esta lista?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Registrar lista',
+        cancelButtonText: 'Cancelar',
+        reverseButtons: true
+      }).then((result) => {
+        if (result.isConfirmed) {
+          swalWithBootstrapButtons.fire(
+            'Lista Registrada con Exito!',
+            'Se enviará un correo de confirmación si su lista ha sido aceptada',
+            'success'
+          )
+        } else if (
+          /* Read more about handling dismissals below */
+          result.dismiss === Swal.DismissReason.cancel
+        ) {
+          swalWithBootstrapButtons.fire(
+            'Cancelado!',
+            'No se ha Registrado la Lista :)',
+            'error'
+          )
+        }
+      })
     } else {
-      alert('Formulario No Valido');
+      Swal.fire({
+        icon: 'error',
+        title: 'No se ha completado el Registro',
+        text: 'Complete el registro para continuar!',
+      })
     }
+    console.log(this.form.valid);
   }
+  
+ 
 
   validateForm() {
     if (this.nombreLista === '' && this.nombreLista.length <= 3) {

@@ -7,6 +7,8 @@ import { CandidatoComponent } from './pages/auth/candidato/candidato.component';
 import { SolicitudCandidatosComponent } from './pages/auth/solicitud-candidatos/solicitud-candidatos.component';
 import { PerfilCandidatoComponent } from './pages/auth/solicitud-candidatos/perfil-candidato/perfil-candidato.component';
 import { ObservacionesComponent } from './pages/auth/solicitud-candidatos/observaciones/observaciones.component';
+import { VerCandidatoComponent } from './pages/auth/solicitud-candidatos/ver-candidato/ver-candidato.component';
+import { InfoCandidatoComponent } from './pages/auth/solicitud-candidatos/info-candidato/info-candidato.component';
 
 
 
@@ -18,6 +20,8 @@ const routes: Routes = [
   { path: 'solicitud', component: SolicitudCandidatosComponent },
   { path: 'perfil-candidato', component: PerfilCandidatoComponent },
   { path: 'observaciones', component: ObservacionesComponent },
+  { path: 'ver-candidato', component: VerCandidatoComponent },
+  { path: 'info-candidato', component: InfoCandidatoComponent },
 ];
 
 @NgModule({
