@@ -3,11 +3,11 @@ import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-solicitud-candidatos',
-  templateUrl: './solicitud-candidatos.component.html',
-  styleUrls: ['./solicitud-candidatos.component.scss']
+  selector: 'app-solicitud',
+  templateUrl: './solicitud.component.html',
+  styleUrls: ['./solicitud.component.scss']
 })
-export class SolicitudCandidatosComponent {
+export class SolicitudComponent {
   confirmarEliminacion() {
     const swalWithBootstrapButtons = Swal.mixin({
       customClass: {
