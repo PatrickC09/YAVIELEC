@@ -9,19 +9,22 @@ import { PerfilCandidatoComponent } from './pages/auth/solicitud-candidatos/perf
 import { ObservacionesComponent } from './pages/auth/solicitud-candidatos/observaciones/observaciones.component';
 import { VerCandidatoComponent } from './pages/auth/solicitud-candidatos/ver-candidato/ver-candidato.component';
 import { InfoCandidatoComponent } from './pages/auth/solicitud-candidatos/info-candidato/info-candidato.component';
-
-
+import { ResetPasswordComponent } from './pages/auth/login/reset-password/reset-password.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'header', component: HeaderComponent },
   { path: 'menu', component: MenuComponent },
   { path: 'candidato', component: CandidatoComponent },
+
   { path: 'solicitud', component: SolicitudCandidatosComponent },
   { path: 'perfil-candidato', component: PerfilCandidatoComponent },
   { path: 'observaciones', component: ObservacionesComponent },
   { path: 'ver-candidato', component: VerCandidatoComponent },
   { path: 'info-candidato', component: InfoCandidatoComponent },
+
+  { path: 'resetearContraseña', component:ResetPasswordComponent }
+
 ];
 
 @NgModule({

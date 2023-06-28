@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/auth/login/login/login.component';
 
+
 import { HeaderComponent } from './pages/auth/header/header.component';
 import { MenuComponent } from './pages/auth/menu/menu.component';
 import { CandidatoComponent } from './pages/auth/candidato/candidato.component';
@@ -17,6 +18,9 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { VerCandidatoComponent } from './pages/auth/solicitud-candidatos/ver-candidato/ver-candidato.component';
 import { InfoCandidatoComponent } from './pages/auth/solicitud-candidatos/info-candidato/info-candidato.component';
 
+import { ResetPasswordComponent } from './pages/auth/login/reset-password/reset-password.component'
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +32,10 @@ import { InfoCandidatoComponent } from './pages/auth/solicitud-candidatos/info-c
     PerfilCandidatoComponent,
     ObservacionesComponent,
     VerCandidatoComponent,
-    InfoCandidatoComponent
+    InfoCandidatoComponent,
+    ObservacionesComponent,
+    ResetPasswordComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -37,6 +44,8 @@ import { InfoCandidatoComponent } from './pages/auth/solicitud-candidatos/info-c
 
     FormsModule,
     ReactiveFormsModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
