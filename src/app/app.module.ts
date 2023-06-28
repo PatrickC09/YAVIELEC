@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/auth/login/login/login.component';
-<<<<<<< HEAD
 
 import { HeaderComponent } from './pages/auth/header/header.component';
 import { MenuComponent } from './pages/auth/menu/menu.component';
@@ -15,12 +14,9 @@ import { PerfilCandidatoComponent } from './pages/auth/solicitud-candidatos/perf
 import { ObservacionesComponent } from './pages/auth/solicitud-candidatos/observaciones/observaciones.component';
 
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-=======
-import { CandidatoComponent } from './pages/auth/login/candidato/candidato.component';
-import { HeaderComponent } from './pages/auth/login/header/header.component';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { ResetPasswordComponent } from './pages/auth/login/reset-password/reset-password.component'
->>>>>>> main
+import { ResetPasswordComponent } from './pages/auth/login/reset-password/reset-password.component';
+import { VistaListaComponent } from './pages/auth/listas/vista-lista/vista-lista.component';
+import { VistaIntegrantesComponent } from './pages/auth/listas/vista-integrantes/vista-integrantes.component'
 
 @NgModule({
   declarations: [
@@ -28,27 +24,23 @@ import { ResetPasswordComponent } from './pages/auth/login/reset-password/reset-
     LoginComponent,
     CandidatoComponent,
     HeaderComponent,
-<<<<<<< HEAD
     MenuComponent,
     SolicitudCandidatosComponent,
     PerfilCandidatoComponent,
-    ObservacionesComponent
-=======
-    ResetPasswordComponent
->>>>>>> main
+    ObservacionesComponent,
+    ResetPasswordComponent,
+    VistaListaComponent,
+    VistaIntegrantesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-<<<<<<< HEAD
     RouterModule,
 
     FormsModule,
     ReactiveFormsModule,
-=======
     FormsModule,
     ReactiveFormsModule
->>>>>>> main
   ],
   providers: [],
   bootstrap: [AppComponent]
