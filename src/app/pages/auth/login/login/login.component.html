@@ -12,22 +12,22 @@
 
                     <label> Usuario:</label>
                     <div class="input-group mb-3">
-                        <input type="email" formControlName="username" name="username" class="form-control"
+                        <input type="email" formControlName="correo" name="correo" class="form-control"
                             class="form-control" aria-label="Sizing example input"
                             aria-describedby="inputGroup-sizing-default" placeholder="Ingrese su Numero de Cédula">
                     </div>
                     <small id="colorAlert"
-                        *ngIf="loginForm.controls['username'].errors && loginForm.controls['username'].touched">
+                        *ngIf="loginForm.controls['correo'].errors && loginForm.controls['correo'].touched">
                         El Campo es Requerido
                     </small>
 
                     <label>Contraseña:</label>
                     <div class="input-group mb-3">
-                        <input type="password" formControlName="password" class="form-control"
+                        <input type="password" formControlName="clave" class="form-control"
                             aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                     </div>
                     <small id="colorAlert"
-                        *ngIf="loginForm.controls['password'].errors && loginForm.controls['password'].touched">
+                        *ngIf="loginForm.controls['clave'].errors && loginForm.controls['clave'].touched">
                         El Campo es Requerido
                     </small>
 
@@ -40,7 +40,7 @@
                         </select>
 
                     <div>
-                        <button (click)="clickIngresar()" type="submit" class="btn btn-primary">Ingresar</button>
+                        <button type="submit" class="btn btn-primary">Ingresar</button>
                     </div>
 
                     <footer class="footer">

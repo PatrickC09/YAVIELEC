@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { LoginService } from 'src/app/service/login.service';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,8 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private router: Router
+    private router: Router,
+    private loginService: LoginService
   ) { }
 
   ngOnInit() {
@@ -26,6 +28,7 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     if (this.loginForm.valid) {
       alert('Usuario logeado con Exito ')
+      this.login()
     } else {
       alert('Usuario no registrado')
     }
@@ -34,8 +37,12 @@ export class LoginComponent implements OnInit {
   /**
    * ingresar al sistema por rutas
    */
-  clickIngresar(){
-    this.router.navigate(['candidato']);
+  login(){
+    this.loginService.login(this.loginForm.value).subscribe(
+      response =>{
+        console.log(response);
+      }
+    )
   }
 
 }

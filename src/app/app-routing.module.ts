@@ -28,8 +28,8 @@ const routes: Routes = [
 
   { path: 'resetearContraseña', component:ResetPasswordComponent },
   { path: 'usuarios', component: UsuariosComponent },
-  { path: '', redirectTo: '/solicitud', pathMatch: 'full'},
-  { path: '***', redirectTo: '/solicitud', pathMatch: 'full'},
+  { path: '', redirectTo: '/login', pathMatch: 'full'},
+  { path: '***', redirectTo: '/login', pathMatch: 'full'},
 
 ];
 
