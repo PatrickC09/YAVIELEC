@@ -12,25 +12,26 @@ import Swal from 'sweetalert2';
 export class CandidatoComponent {
   public archivoUrl: string = 'assets/reglamento.pdf';
 
-  nombreLista: string = '';
-  datosPresidenteNombre: string = '';
-  datosPresidenteCorreo: string = '';
-  datosViceNombre: string = '';
-  datosViceCorreo: string = '';
-  eslogan: string = '';
-  datosSecretarioNombre: string = '';
-  datosSecretarioCorreo: string = '';
-  datosTesoreroNombre: string = '';
-  datosTesoreroCorreo: string = '';
-  numeroLista: number = 0;
-  datosVocal1Nombre: string = '';
-  datosVocal1Correo: string = '';
-  datosVocal2Nombre: string = '';
-  datosVocal2Correo: string = '';
-  datosVocal3Nombre: string = '';
-  datosVocal3Correo: string = '';
-  logoLista: string = '';
-  registrarPropuesta: string = '';
+  nombre: string = ''; //cambio
+  datosPresiNombre: string = ''; //cambio
+  datosPresiCorreo: string = ''; //cambio
+  datosViceNombre: string = ''; //cambio
+  datosViceCorreo: string = ''; //cambio
+  slogan: string = ''; //cambio
+  datosSecretarioNombre: string = ''; //cambio
+  datosSecretarioCorreo: string = ''; //cambio
+  datosTesoreroNombre: string = ''; //cambio
+  datosTesoreroCorreo: string = ''; //cambio
+  nro_lista: number = 0; //cambio
+  datosVocal1Nombre: string = ''; //cambio
+  datosVocal1Correo: string = ''; //cambio
+  datosVocal2Nombre: string = ''; //cambio
+  datosVocal2Correo: string = ''; //cambio
+  datosVocal3Nombre: string = ''; //cambio
+  datosVocal3Correo: string = ''; //cambio
+  logo: string = ''; //cambio
+  propuesta: string = ''; //cambio
+  estado: boolean = false;
   
   form: FormGroup;
 
@@ -40,47 +41,51 @@ export class CandidatoComponent {
               ) {
     if (this.candidatosService.selectedCandidato){
       this.form = formBuilder.group({
-        nombreLista: [this.candidatosService.selectedCandidato.nombreLista, [Validators.required, Validators.minLength(2)]],
-        datosPresidenteNombre: [this.candidatosService.selectedCandidato.nombreLista, [Validators.required, Validators.minLength(2)]],
-        datosPresidenteCorreo: [this.candidatosService.selectedCandidato.nombreLista, [Validators.required, Validators.email]],
-        datosViceNombre: [this.candidatosService.selectedCandidato.nombreLista, [Validators.required, Validators.minLength(2)]],
-        datosViceCorreo: [this.candidatosService.selectedCandidato.nombreLista, [Validators.required, Validators.email]],
-        eslogan: [this.candidatosService.selectedCandidato.nombreLista, [Validators.required, Validators.minLength(2)]],
-        datosSecretarioNombre: [this.candidatosService.selectedCandidato.nombreLista, [Validators.required, Validators.minLength(2)]],
-        datosSecretarioCorreo: [this.candidatosService.selectedCandidato.nombreLista, [Validators.required, Validators.email]],
-        datosTesoreroNombre: [this.candidatosService.selectedCandidato.nombreLista, [Validators.required, Validators.minLength(2)]],
-        datosTesoreroCorreo: [this.candidatosService.selectedCandidato.nombreLista, [Validators.required, Validators.email]],
-        numeroLista: [this.candidatosService.selectedCandidato.nombreLista, [Validators.required, Validators.min(1)]],
-        datosVocal1Nombre: [this.candidatosService.selectedCandidato.nombreLista, [Validators.required, Validators.minLength(2)]],
-        datosVocal1Correo: [this.candidatosService.selectedCandidato.nombreLista, [Validators.required, Validators.email]],
-        datosVocal2Nombre: [this.candidatosService.selectedCandidato.nombreLista, [Validators.required, Validators.minLength(2)]],
-        datosVocal2Correo: [this.candidatosService.selectedCandidato.nombreLista, [Validators.required, Validators.email]],
-        datosVocal3Nombre: [this.candidatosService.selectedCandidato.nombreLista, [Validators.required, Validators.minLength(2)]],
-        datosVocal3Correo: [this.candidatosService.selectedCandidato.nombreLista, [Validators.required, Validators.email]],
-        logoLista: [this.candidatosService.selectedCandidato.nombreLista, [Validators.required, Validators.minLength(2)]],
-        registrarPropuesta: [this.candidatosService.selectedCandidato.nombreLista, [Validators.required, Validators.minLength(2)]],
+        id_lista: [this.candidatosService.selectedCandidato.id_lista],
+        nombre: [this.candidatosService.selectedCandidato.nombre, [Validators.required, Validators.minLength(2)]],
+        datosPresiNombre: [this.candidatosService.selectedCandidato.datosPresiNombre, [Validators.required, Validators.minLength(2)]],
+        datosPresiCorreo: [this.candidatosService.selectedCandidato.datosPresiCorreo, [Validators.required, Validators.email]],
+        datosViceNombre: [this.candidatosService.selectedCandidato.datosViceNombre, [Validators.required, Validators.minLength(2)]],
+        datosViceCorreo: [this.candidatosService.selectedCandidato.datosViceCorreo, [Validators.required, Validators.email]],
+        slogan: [this.candidatosService.selectedCandidato.slogan, [Validators.required, Validators.minLength(2)]],
+        datosSecretarioNombre: [this.candidatosService.selectedCandidato.datosSecretarioNombre, [Validators.required, Validators.minLength(2)]],
+        datosSecretarioCorreo: [this.candidatosService.selectedCandidato.datosSecretarioCorreo, [Validators.required, Validators.email]],
+        datosTesoreroNombre: [this.candidatosService.selectedCandidato.datosTesoreroNombre, [Validators.required, Validators.minLength(2)]],
+        datosTesoreroCorreo: [this.candidatosService.selectedCandidato.datosTesoreroCorreo, [Validators.required, Validators.email]],
+        nro_lista: [this.candidatosService.selectedCandidato.nro_lista, [Validators.required, Validators.min(1)]],
+        datosVocal1Nombre: [this.candidatosService.selectedCandidato.datosVocal1Nombre, [Validators.required, Validators.minLength(2)]],
+        datosVocal1Correo: [this.candidatosService.selectedCandidato.datosVocal1Correo, [Validators.required, Validators.email]],
+        datosVocal2Nombre: [this.candidatosService.selectedCandidato.datosVocal2Nombre, [Validators.required, Validators.minLength(2)]],
+        datosVocal2Correo: [this.candidatosService.selectedCandidato.datosVocal2Correo, [Validators.required, Validators.email]],
+        datosVocal3Nombre: [this.candidatosService.selectedCandidato.datosVocal3Nombre, [Validators.required, Validators.minLength(2)]],
+        datosVocal3Correo: [this.candidatosService.selectedCandidato.datosVocal3Correo, [Validators.required, Validators.email]],
+        logo: [this.candidatosService.selectedCandidato.logo, [Validators.required, Validators.minLength(2)]],
+        propuesta: [this.candidatosService.selectedCandidato.propuesta, [Validators.required, Validators.minLength(2)]],
+        estado: [this.candidatosService.selectedCandidato.estado, []],
       })
     } else {
       this.form = formBuilder.group({
-        nombreLista: ['', [Validators.required, Validators.minLength(2)]],
-        datosPresidenteNombre: ['', [Validators.required, Validators.minLength(2)]],
-        datosPresidenteCorreo: ['', [Validators.required, Validators.email]],
+        id_lista: [0],
+        nombre: ['', [Validators.required, Validators.minLength(2)]],
+        datosPresiNombre: ['', [Validators.required, Validators.minLength(2)]],
+        datosPresiCorreo: ['', [Validators.required, Validators.email]],
         datosViceNombre: ['', [Validators.required, Validators.minLength(2)]],
         datosViceCorreo: ['', [Validators.required, Validators.email]],
-        eslogan: ['', [Validators.required, Validators.minLength(2)]],
+        slogan: ['', [Validators.required, Validators.minLength(2)]],
         datosSecretarioNombre: ['', [Validators.required, Validators.minLength(2)]],
         datosSecretarioCorreo: ['', [Validators.required, Validators.email]],
         datosTesoreroNombre: ['', [Validators.required, Validators.minLength(2)]],
         datosTesoreroCorreo: ['', [Validators.required, Validators.email]],
-        numeroLista: ['', [Validators.required, Validators.min(1)]],
+        nro_lista: ['', [Validators.required, Validators.min(1)]],
         datosVocal1Nombre: ['', [Validators.required, Validators.minLength(2)]],
         datosVocal1Correo: ['', [Validators.required, Validators.email]],
         datosVocal2Nombre: ['', [Validators.required, Validators.minLength(2)]],
         datosVocal2Correo: ['', [Validators.required, Validators.email]],
         datosVocal3Nombre: ['', [Validators.required, Validators.minLength(2)]],
         datosVocal3Correo: ['', [Validators.required, Validators.email]],
-        logoLista: ['', [Validators.required, Validators.minLength(2)]],
-        registrarPropuesta: ['', [Validators.required, Validators.minLength(2)]],
+        logo: ['', [Validators.required, Validators.minLength(2)]],
+        propuesta: ['', [Validators.required, Validators.minLength(2)]],
+        estado: [false,[]],
       })
     }
   }
@@ -134,7 +139,7 @@ export class CandidatoComponent {
  
 
   validateForm() {
-    if (this.nombreLista === '' && this.nombreLista.length <= 3) {
+    if (this.nombre === '' && this.nombre.length <= 3) {
 
     }
   }
@@ -150,7 +155,7 @@ export class CandidatoComponent {
   }
 
   get idField() {
-    return this.form.controls['id'];
+    return this.form.controls['id_lista'];
   }
 
 

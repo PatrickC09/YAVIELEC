@@ -22,8 +22,8 @@
                     <div class="fields">
                         <div class="input-field">
                             <label>Nombre de la Lista</label>
-                            <input type="text" formControlName="nombreLista">
-                            <small *ngIf="form.controls['nombreLista'].errors && form.controls['nombreLista'].touched">
+                            <input type="text" formControlName="nombre">
+                            <small *ngIf="form.controls['nombre'].errors && form.controls['nombre'].touched">
                                 El campo debe ser Completado
                             </small>
                             
@@ -32,12 +32,12 @@
                         <div class="input-field">
                             <div class="input-container">
                             <label>Datos del Presidente</label>
-                            <input type="text" placeholder="Nombre" formControlName="datosPresidenteNombre">
-                            <small *ngIf="form.controls['datosPresidenteNombre'].errors && form.controls['datosPresidenteNombre'].touched">
+                            <input type="text" placeholder="Nombre" formControlName="datosPresiNombre">
+                            <small *ngIf="form.controls['datosPresiNombre'].errors && form.controls['datosPresiNombre'].touched">
                                 El campo debe ser Completado
                             </small>
-                            <input type="email" placeholder="Correo" formControlName="datosPresidenteCorreo">
-                            <small *ngIf="form.controls['datosPresidenteCorreo'].errors && form.controls['datosPresidenteCorreo'].touched">
+                            <input type="email" placeholder="Correo" formControlName="datosPresiCorreo">
+                            <small *ngIf="form.controls['datosPresiCorreo'].errors && form.controls['datosPresiCorreo'].touched">
                                 El campo debe ser Completado
                             </small>
                             </div>
@@ -59,8 +59,8 @@
 
                         <div class="input-field">
                             <label>Eslogan de la Lista</label>
-                            <input type="text" formControlName="eslogan">
-                            <small *ngIf="form.controls['eslogan'].errors && form.controls['eslogan'].touched">
+                            <input type="text" formControlName="slogan">
+                            <small *ngIf="form.controls['slogan'].errors && form.controls['slogan'].touched">
                                 El campo debe ser Completado
                             </small>
                         </div>
@@ -97,8 +97,8 @@
                     <div class="fields">
                         <div class="input-field">
                             <label>Número de la Lista</label>
-                            <input type="text" formControlName="numeroLista">
-                            <small *ngIf="form.controls['numeroLista'].errors && form.controls['numeroLista'].touched">
+                            <input type="text" formControlName="nro_lista">
+                            <small *ngIf="form.controls['nro_lista'].errors && form.controls['nro_lista'].touched">
                                 El campo debe ser Completado
                             </small>
                         </div>
@@ -133,8 +133,8 @@
 
                         <div class="input-field">
                             <label>Logo de la Lista</label>
-                            <input type="file" id="file-upload" accept=".png, .jpg, .jpeg" formControlName="logoLista">
-                            <small *ngIf="form.controls['logoLista'].errors && form.controls['logoLista'].touched">
+                            <input type="file" id="file-upload" accept=".png, .jpg, .jpeg" formControlName="logo">
+                            <small *ngIf="form.controls['logo'].errors && form.controls['logo'].touched">
                                 El campo debe ser Completado
                             </small>
                         </div>
@@ -155,8 +155,8 @@
 
                         <div class="input-field">
                             <label>Registrar Propuesta</label>
-                            <input type="text" formControlName="registrarPropuesta">
-                            <small *ngIf="form.controls['registrarPropuesta'].errors && form.controls['registrarPropuesta'].touched">
+                            <input type="text" formControlName="propuesta">
+                            <small *ngIf="form.controls['propuesta'].errors && form.controls['propuesta'].touched">
                                 El campo debe ser Completado
                             </small>
                         </div>
