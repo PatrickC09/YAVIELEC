@@ -19,7 +19,7 @@ export class VerCandidatoComponent {
     
     swalWithBootstrapButtons.fire({
       title: 'Eliminar Candidato',
-      text: "¿Esta seguro de eliminar este candidato?",
+      text: "¿Está seguro de eliminar este candidato?",
       icon: 'warning',
       showCancelButton: true,
       confirmButtonText: 'Eliminar',
