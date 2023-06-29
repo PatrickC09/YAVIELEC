@@ -13,6 +13,7 @@ import { VistaIntegrantesComponent } from './pages/auth/listas/vista-integrantes
 import { ObservacionesComponent } from './pages/auth/solicitud-candidato/observaciones/observaciones.component';
 import { PerfilCandidatoComponent } from './pages/auth/solicitud-candidato/perfil-candidato/perfil-candidato.component';
 import { VistaListaComponent } from './pages/auth/listas/vista-lista/vista-lista.component';
+import { PermisosGuard } from './guard/permisos.guard';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -20,7 +21,7 @@ const routes: Routes = [
   { path: 'menu', component: MenuComponent },
   { path: 'candidato', component: CandidatoComponent },
 
-  { path: 'solicitud', component: SolicitudComponent},
+{ path: 'solicitud', component: SolicitudComponent/*,canActivate:[PermisosGuard]*/},
   { path: 'perfil-candidato', component: PerfilCandidatoComponent },
   { path: 'observaciones', component: ObservacionesComponent },
   { path: 'ver-candidato', component: VerCandidatoComponent },

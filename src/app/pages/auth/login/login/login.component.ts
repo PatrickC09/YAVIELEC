@@ -11,7 +11,9 @@ import { LoginService } from 'src/app/service/login.service';
 export class LoginComponent implements OnInit {
   private error: any;
   private msg: any;
-  private isLog:boolean = false;
+  private data:any;
+  private msgd: any;
+ // private isLog:boolean = false;
   loginForm!: FormGroup;
 
   constructor(
@@ -48,10 +50,11 @@ export class LoginComponent implements OnInit {
     // )
     this.loginService.login(this.loginForm.value).subscribe(
       (res) => {
-
-          this.router.navigate(['solicitud']);
-          this.isLog = true;
-        
+        this.data = Object.values(res)
+        this.msgd = Object.values(this.data[0]);
+        localStorage.setItem('toke', this.msgd[0])
+          //this.router.navigate(['solicitud']);
+        console.log(this.msgd[0]);
       },
       (err) => {
         this.error = Object.values(err)
@@ -61,6 +64,11 @@ export class LoginComponent implements OnInit {
 
     );
 
+  }
+
+  logOut(){
+    const token = localStorage.removeItem('toke');
+    alert('sesion cerrada')
   }
 
 }
