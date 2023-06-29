@@ -10,7 +10,6 @@ import { MenuComponent } from './pages/auth/menu/menu.component';
 import { CandidatoComponent } from './pages/auth/candidato/candidato.component';
 import { RouterModule } from '@angular/router';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import { ResetPasswordComponent } from './pages/auth/login/reset-password/reset-password.component'
 import { HttpClientModule } from '@angular/common/http';
 import { UsuariosComponent } from './pages/auth/usuarios/usuarios.component';
 import { PerfilCandidatoComponent } from './pages/auth/solicitud-candidato/perfil-candidato/perfil-candidato.component';
@@ -22,6 +21,9 @@ import { SolicitudComponent } from './pages/auth/solicitud-candidato/solicitud/s
 
 
 
+import { ResetPasswordComponent } from './pages/auth/login/reset-password/reset-password.component';
+import { VistaListaComponent } from './pages/auth/listas/vista-lista/vista-lista.component';
+import { VistaIntegrantesComponent } from './pages/auth/listas/vista-integrantes/vista-integrantes.component'
 
 @NgModule({
   declarations: [
@@ -39,6 +41,9 @@ import { SolicitudComponent } from './pages/auth/solicitud-candidato/solicitud/s
     UsuariosComponent,
     SolicitudComponent,
 
+    ResetPasswordComponent,
+    VistaListaComponent,
+    VistaIntegrantesComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +54,8 @@ import { SolicitudComponent } from './pages/auth/solicitud-candidato/solicitud/s
     ReactiveFormsModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

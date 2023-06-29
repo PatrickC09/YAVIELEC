@@ -7,12 +7,12 @@ import { CandidatoComponent } from './pages/auth/candidato/candidato.component';
 import { ResetPasswordComponent } from './pages/auth/login/reset-password/reset-password.component';
 import { UsuariosComponent } from './pages/auth/usuarios/usuarios.component';
 import { SolicitudComponent } from './pages/auth/solicitud-candidato/solicitud/solicitud.component';
-import { PerfilCandidatoComponent } from './pages/auth/solicitud-candidato/perfil-candidato/perfil-candidato.component';
-import { ObservacionesComponent } from './pages/auth/solicitud-candidato/observaciones/observaciones.component';
 import { VerCandidatoComponent } from './pages/auth/solicitud-candidato/ver-candidato/ver-candidato.component';
 import { InfoCandidatoComponent } from './pages/auth/solicitud-candidato/info-candidato/info-candidato.component';
-
-
+import { VistaIntegrantesComponent } from './pages/auth/listas/vista-integrantes/vista-integrantes.component';
+import { ObservacionesComponent } from './pages/auth/solicitud-candidato/observaciones/observaciones.component';
+import { PerfilCandidatoComponent } from './pages/auth/solicitud-candidato/perfil-candidato/perfil-candidato.component';
+import { VistaListaComponent } from './pages/auth/listas/vista-lista/vista-lista.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -30,7 +30,8 @@ const routes: Routes = [
   { path: 'usuarios', component: UsuariosComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full'},
   { path: '***', redirectTo: '/login', pathMatch: 'full'},
-
+  { path: 'vista-lista', component: VistaListaComponent },
+  { path: 'vista-integrantes', component: VistaIntegrantesComponent },
 ];
 
 @NgModule({
