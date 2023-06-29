@@ -37,9 +37,9 @@ export class LoginComponent implements OnInit {
   /**
    * ingresar al sistema por rutas
    */
-  login(){
+  login() {
     this.loginService.login(this.loginForm.value).subscribe(
-      response =>{
+      response => {
         console.log(response);
       }
     )
