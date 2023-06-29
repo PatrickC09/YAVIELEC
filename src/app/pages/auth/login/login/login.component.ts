@@ -9,7 +9,9 @@ import { LoginService } from 'src/app/service/login.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-
+  private error: any;
+  private msg: any;
+  private isLog:boolean = false;
   loginForm!: FormGroup;
 
   constructor(
@@ -27,10 +29,9 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     if (this.loginForm.valid) {
-      alert('Usuario logeado con Exito ')
       this.login()
     } else {
-      alert('Usuario no registrado')
+      alert('Login incorrecto')
     }
   }
 
@@ -38,12 +39,27 @@ export class LoginComponent implements OnInit {
    * ingresar al sistema por rutas
    */
   login() {
+    // this.loginService.login(this.loginForm.value).subscribe(
+    //   response => {
+    //     this.router.navigate(['solicitud']);
+    //     console.log(response);
+    //   }
+     
+    // )
     this.loginService.login(this.loginForm.value).subscribe(
-      response => {
-        this.router.navigate(['solicitud']);
-        console.log(response);
+      (res) => {
+
+          this.router.navigate(['solicitud']);
+          this.isLog = true;
+        
+      },
+      (err) => {
+        this.error = Object.values(err)
+        this.msg = Object.values(this.error[7])
+        alert(this.msg[1]);
       }
-    )
+
+    );
 
   }
 
