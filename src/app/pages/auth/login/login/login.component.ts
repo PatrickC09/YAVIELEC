@@ -20,8 +20,8 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
-      username: ['', Validators.required],
-      password: ['', Validators.required]
+      correo: ['', Validators.required],
+      clave: ['', Validators.required]
     })
   }
 
@@ -40,9 +40,11 @@ export class LoginComponent implements OnInit {
   login() {
     this.loginService.login(this.loginForm.value).subscribe(
       response => {
+        this.router.navigate(['solicitud']);
         console.log(response);
       }
     )
+
   }
 
 }
