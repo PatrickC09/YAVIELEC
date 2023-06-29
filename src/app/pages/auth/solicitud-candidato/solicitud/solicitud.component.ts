@@ -13,6 +13,7 @@ export class SolicitudComponent {
   data: any;
   tipoLista: any;
   listarUsuario: any;
+  id_lista:any;
   swalWithBootstrapButtons = Swal.mixin({
     customClass: {
       confirmButton: 'btn btn-success',
@@ -20,7 +21,7 @@ export class SolicitudComponent {
     },
     buttonsStyling: false,
   });
-  constructor(private candidatoService: SolicitudService) {
+  constructor(private candidatoService: SolicitudService, private router: Router) {
     this.loadCandidato();
   }
   loadCandidato() {
@@ -66,10 +67,11 @@ export class SolicitudComponent {
         }
       });
   }
-  editarLista(id:string) {
-
-    console.log(    this.candidatoService.updateLista(id));
-
+  editarLista(id: string) {
+    this.router.navigate(['perfil-candidato'])
+    this.id_lista = id;
+    console.log(this.id_lista);
+    
   }
 }
 export interface Lista {
