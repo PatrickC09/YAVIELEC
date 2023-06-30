@@ -53,7 +53,7 @@ export class LoginComponent implements OnInit {
         this.data = Object.values(res)
         this.msgd = Object.values(this.data[0]);
         localStorage.setItem('toke', this.msgd[0])
-          //this.router.navigate(['solicitud']);
+        this.router.navigate(['solicitud']);
         console.log(this.msgd[0]);
       },
       (err) => {
