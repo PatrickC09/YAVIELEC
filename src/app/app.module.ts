@@ -10,6 +10,7 @@ import { MenuComponent } from './pages/auth/menu/menu.component';
 import { CandidatoComponent } from './pages/auth/candidato/candidato.component';
 import { RouterModule } from '@angular/router';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+<<<<<<< HEAD
 import { ResetPasswordComponent } from './pages/auth/login/reset-password/reset-password.component'
 import { HttpClientModule } from '@angular/common/http';
 import { UsuariosComponent } from './pages/auth/usuarios/usuarios.component';
@@ -23,6 +24,11 @@ import { TableModule } from 'primeng/table';
 
 
 
+=======
+import { ResetPasswordComponent } from './pages/auth/login/reset-password/reset-password.component';
+import { VistaListaComponent } from './pages/auth/listas/vista-lista/vista-lista.component';
+import { VistaIntegrantesComponent } from './pages/auth/listas/vista-integrantes/vista-integrantes.component'
+>>>>>>> main
 
 @NgModule({
   declarations: [
@@ -33,6 +39,7 @@ import { TableModule } from 'primeng/table';
     MenuComponent,
     PerfilCandidatoComponent,
     ObservacionesComponent,
+<<<<<<< HEAD
     VerCandidatoComponent,
     InfoCandidatoComponent,
     ObservacionesComponent,
@@ -40,6 +47,11 @@ import { TableModule } from 'primeng/table';
     UsuariosComponent,
     SolicitudComponent,
 
+=======
+    ResetPasswordComponent,
+    VistaListaComponent,
+    VistaIntegrantesComponent
+>>>>>>> main
   ],
   imports: [
     BrowserModule,
@@ -49,10 +61,14 @@ import { TableModule } from 'primeng/table';
     FormsModule,
     ReactiveFormsModule,
     FormsModule,
+<<<<<<< HEAD
     ReactiveFormsModule,
     HttpClientModule,
     TableModule,
 
+=======
+    ReactiveFormsModule
+>>>>>>> main
   ],
   providers: [],
   bootstrap: [AppComponent]
