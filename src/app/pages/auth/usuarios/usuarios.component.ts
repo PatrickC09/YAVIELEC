@@ -69,14 +69,7 @@ export class UsuariosComponent {
 
   exportToExcel(): void {
     // Datos de ejemplo, reemplázalos con los datos de tu tabla
-    const usuarios = [
-      {
-        CI: 'Usuario 1',
-        Nombres: 'Augusto Cesar Veintimilla Tercero',
-        Carrera: 'Arte Culinario',
-        Nivel: '1',
-      },
-    ];
+    const usuarios = this.data;
 
     // Crea un nuevo libro de trabajo de Excel
     const workbook = XLSX.utils.book_new();

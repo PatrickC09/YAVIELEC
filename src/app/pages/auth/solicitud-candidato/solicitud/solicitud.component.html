@@ -26,7 +26,6 @@
         <table class="table">
             <thead>
               <tr>
-                <th scope="col">Id</th>
                 <th scope="col">Logo</th>
                 <th scope="col">Nombre Lista</th>
                 <th scope="col">Numero de Lista</th>
@@ -36,7 +35,6 @@
             </thead>
             <tbody>
               <tr *ngFor="let candidato of data">
-                <th scope="row">{{candidato.id}}</th>
                 <td>{{candidato.logo}}</td>
                 <td>{{candidato.nombre}}</td>
                 <td>{{candidato.nro_lista}}</td>
