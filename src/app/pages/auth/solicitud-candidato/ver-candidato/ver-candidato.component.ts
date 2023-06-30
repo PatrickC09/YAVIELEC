@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { CandidatosService } from 'src/app/service/candidatos.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -8,6 +10,13 @@ import Swal from 'sweetalert2';
 })
 
 export class VerCandidatoComponent {
+  candidatos: any[] = [];
+  selectedCandidato: any;
+
+  constructor(private candidatoService: CandidatosService, private router: Router) {
+    this.candidatos = this.candidatoService.candidatos;
+  }
+
   confirmarEliminacion() {
     const swalWithBootstrapButtons = Swal.mixin({
       customClass: {

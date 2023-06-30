@@ -8,15 +8,16 @@
 <body>
     <app-menu></app-menu>
     <div class="container">
-        <h1 class="perfil">Perfil del Candidato</h1>
+        <h1 class="perfil">Perfil de la Lista</h1>
         <div class="container-p">
                 <button class="button-p" routerLink="/solicitud">
                     <span class="image-container">
                       <img src="./assets/back.png" alt="Imagen" class="image-p">
                     </span>
-                    <span class="text">Volver atras</span>
+                    <span>Volver atras</span>
                   </button>
         </div>
+<<<<<<< HEAD
         <div *ngFor="let candidato of data">
         <div class="contenedor-logo">
             <img src="https://pbs.twimg.com/profile_images/953015820669636609/9cv2czeD_400x400.jpg" alt="" class="logo-lista">
@@ -36,6 +37,32 @@
         </button>
         </div>
         </div>
+=======
+        <p-table [value]="candidatos" [tableStyle]="{'min-width': '50rem'}"
+         selectionMode="single" [(selection)]="selectedCandidato" dataKey="id">
+        <ng-template pTemplate="header">
+              <tr>
+                <th scope="col">Logo</th>
+                <th scope="col">Numero de Lista</th>
+                <th scope="col">Nombre Lista</th>
+                <th scope="col">Requisitos</th>
+                <th scope="col">Propuesta</th>
+              </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-item>
+              <tr [pSelectableRow]="item">
+                <th scope="row">1</th>
+                <td>{{item.nro_lista}}</td>
+                <td>{{item.nombre}}</td>
+                <td>{{item.estado}}</td>
+                <td>{{item.propuesta}}</td>
+              </tr>
+            </ng-template>
+          </p-table>
+          <button class="observaciones-b" routerLink="/observaciones">
+            <span class="text">Observaciones</span>
+        </button>
+>>>>>>> jean
     </div>
 </body>
 </html>

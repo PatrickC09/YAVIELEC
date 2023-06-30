@@ -23,25 +23,21 @@
             <input type="submit" value="Buscar">
           </form>
         </div>
-        <table class="table">
-            <thead>
+        <p-table [value]="candidatos" [tableStyle]="{'min-width': '50rem'}"
+         selectionMode="single" [(selection)]="selectedCandidato" dataKey="id">
+        <ng-template pTemplate="header">
               <tr>
                 <th scope="col">Logo</th>
                 <th scope="col">Nombre y Apellidos</th>
                 <th scope="col">Correo</th>
-                <th scope="col">Carrera</th>
-                <th scope="col">Nivel</th>
-                <th scope="col">Acciones</th>
               </tr>
-            </thead>
-            <tbody>
-              <tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-item>
+              <tr [pSelectableRow]="item">
                 <th scope="row">1</th>
-                <td>ALEX XAVIER TACO VELEZ</td>
-                <td>ax.taco@yavirac.deu.ec</td>
-                <td>Marketing</td>
-                <td>1</td>
-                <td>
+                <td>{{item.datosPresiNombre}}</td>
+                <td>{{item.datosPresiCorreo}}</td>
+		<td>
 
                     <button class="image-button" (click)="abrirVentanaEdicion()">
                         <img src="./assets/edit.png" alt="Texto alternativo de la imagen">
@@ -53,10 +49,9 @@
                     <button routerLink="/info-candidato">
                         <span>Perfil</span>
                     </button>
-                </td>
               </tr>
-            </tbody>
-          </table>
+            </ng-template>
+          </p-table>
     </div>
 
 </body>
