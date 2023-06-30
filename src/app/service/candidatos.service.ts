@@ -25,7 +25,7 @@ export class CandidatosService {
     return this.http.post(this.url , payload);
   }
 
-  updateLista(id: string) {
+  getLista(id: string) {
     return this.http.get(this.url + '/' + id);
   }
 

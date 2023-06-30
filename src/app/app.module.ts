@@ -24,6 +24,9 @@ import { SolicitudComponent } from './pages/auth/solicitud-candidato/solicitud/s
 import { ResetPasswordComponent } from './pages/auth/login/reset-password/reset-password.component';
 import { VistaListaComponent } from './pages/auth/listas/vista-lista/vista-lista.component';
 import { VistaIntegrantesComponent } from './pages/auth/listas/vista-integrantes/vista-integrantes.component'
+import { SolicitudService } from './service/solicitud.service';
+
+
 
 @NgModule({
   declarations: [
@@ -57,7 +60,7 @@ import { VistaIntegrantesComponent } from './pages/auth/listas/vista-integrantes
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [SolicitudService, SolicitudComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

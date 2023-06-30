@@ -17,10 +17,11 @@
                     <span class="text">Volver atras</span>
                   </button>
         </div>
+        <div *ngFor="let candidato of data">
         <div class="contenedor-logo">
             <img src="https://pbs.twimg.com/profile_images/953015820669636609/9cv2czeD_400x400.jpg" alt="" class="logo-lista">
-            <div class="texto">LISTA #1</div>
-            <div class="texto">FUERZA YAVIRAC</div>
+            <div class="texto">LISTA # {{candidato.nro_lista}}</div>
+            <div class="texto">{{candidato.nombre}}</div>
         </div>
         <div class="contenedor-2">
             <h1>Información</h1>
@@ -29,10 +30,11 @@
             <span>Ver Requisitos</span>
         </button>
         <h3>Propuesta:</h3>
-        <textarea class="input-s"></textarea>
+        <textarea class="input-s">{{candidato.propuesta}}</textarea>
         <button class="observaciones-b" routerLink="/observaciones">
             <span>Observaciones</span>
         </button>
+        </div>
         </div>
     </div>
 </body>

@@ -28,7 +28,6 @@ export class SolicitudComponent {
     this.candidatoService.loadListas().subscribe(
       (res) => {
         this.listarUsuario = <any>res;
-        console.log(this.listarUsuario);
         this.data = Object.values(this.listarUsuario);
         this.data = Object.values(this.data[0]);
         this.tipoLista = Object.values(this.data[0].tipoLista)
@@ -68,12 +67,8 @@ export class SolicitudComponent {
       });
   }
   editarLista(id: string) {
+    this.candidatoService.setId(id)
     this.router.navigate(['perfil-candidato'])
-    this.id_lista = id;
-    console.log(this.id_lista);
-    
   }
-}
-export interface Lista {
-  data: any;
+
 }

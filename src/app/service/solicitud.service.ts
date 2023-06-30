@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
 export class SolicitudService {
   url = 'http://localhost:3000/api/v1/listas';
   listas: any[] = [];
-  selectedLista: any = null;
+  id: any = null;
 
   constructor(private http: HttpClient) {
     this.loadListas();
@@ -21,7 +21,14 @@ export class SolicitudService {
     this.listas.push(payload);
   }
 
-  updateLista(id: string) {
+  setId(id:string){
+    this.id = id
+  }
+
+  getId():string{
+    return this.id
+  }
+  getLista(id: string) {
     return this.http.get(this.url + '/' + id);
   }
 
