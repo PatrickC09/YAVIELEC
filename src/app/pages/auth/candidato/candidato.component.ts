@@ -156,7 +156,7 @@ export class CandidatoComponent {
   // }
 
   get idField() {
-    return this.form.controls['id'];
+    return this.form.controls['id_lista'];
   }
 
 
