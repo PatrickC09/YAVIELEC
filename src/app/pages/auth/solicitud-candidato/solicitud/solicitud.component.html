@@ -11,7 +11,7 @@
         <h1>Solicitudes</h1>
     <div class="buttons-orden">
         <div class="button-container">
-            <button>
+            <button (click)="createCandidato()">
                 <span>Agregar</span>
             </button>
             <button>
@@ -23,8 +23,9 @@
             <input type="submit" value="Buscar">
           </form>
         </div>
-        <table class="table">
-            <thead>
+        <p-table [value]="candidatos" [tableStyle]="{'min-width': '50rem'}"
+         selectionMode="single" [(selection)]="selectedCandidato" dataKey="id">
+        <ng-template pTemplate="header">
               <tr>
                 <th scope="col">Logo</th>
                 <th scope="col">Nombre Lista</th>
@@ -32,20 +33,20 @@
                 <th scope="col">Estado</th>
                 <th scope="col">Acciones</th>
               </tr>
-            </thead>
-            <tbody>
-              <tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-item>
+              <tr [pSelectableRow]="item">
                 <th scope="row">1</th>
-                <td>FUERZA YAVIRAC</td>
-                <td>LISTA # 1</td>
-                <td>Aprobado</td>
+                <td>{{item.nombre}}</td>
+                <td>{{item.nro_lista}}</td>
+                <td>{{item.estado}}</td>
                 <td>
-                    <a routerLink="/perfil-candidato">
-                    <button class="image-button">
+                   
+                    <button class="image-button" (click)="editCandidato(item)">
                         <img src="./assets/edit.png" alt="Texto alternativo de la imagen">
                       </button>
-                    </a>
-                      <button class="image-button" (click)="confirmarEliminacion()">
+                    
+                      <button class="image-button" (click)="deleteCandidato(item.id_lista)">
                         <img src="./assets/delete.png" alt="Texto alternativo de la imagen">
                       </button>
                     <button routerLink="/ver-candidato">
@@ -53,8 +54,8 @@
                     </button>
                 </td>
               </tr>
-            </tbody>
-          </table>
+            </ng-template>
+          </p-table>
     </div>
 
 </body>

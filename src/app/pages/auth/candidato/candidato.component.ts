@@ -41,7 +41,7 @@ export class CandidatoComponent {
               ) {
     if (this.candidatosService.selectedCandidato){
       this.form = formBuilder.group({
-        id_lista: [this.candidatosService.selectedCandidato.id_lista],
+        id: [this.candidatosService.selectedCandidato.id],
         nombre: [this.candidatosService.selectedCandidato.nombre, [Validators.required, Validators.minLength(2)]],
         datosPresiNombre: [this.candidatosService.selectedCandidato.datosPresiNombre, [Validators.required, Validators.minLength(2)]],
         datosPresiCorreo: [this.candidatosService.selectedCandidato.datosPresiCorreo, [Validators.required, Validators.email]],
@@ -65,7 +65,7 @@ export class CandidatoComponent {
       })
     } else {
       this.form = formBuilder.group({
-        id_lista: [0],
+        id: [0],
         nombre: ['', [Validators.required, Validators.minLength(2)]],
         datosPresiNombre: ['', [Validators.required, Validators.minLength(2)]],
         datosPresiCorreo: ['', [Validators.required, Validators.email]],
@@ -155,7 +155,7 @@ export class CandidatoComponent {
   }
 
   get idField() {
-    return this.form.controls['id_lista'];
+    return this.form.controls['id'];
   }
 
 

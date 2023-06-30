@@ -19,6 +19,7 @@ import { VerCandidatoComponent } from './pages/auth/solicitud-candidato/ver-cand
 import { InfoCandidatoComponent } from './pages/auth/solicitud-candidato/info-candidato/info-candidato.component';
 import { SolicitudComponent } from './pages/auth/solicitud-candidato/solicitud/solicitud.component';
 
+import { TableModule } from 'primeng/table';
 
 
 
@@ -49,7 +50,9 @@ import { SolicitudComponent } from './pages/auth/solicitud-candidato/solicitud/s
     ReactiveFormsModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    TableModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

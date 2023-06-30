@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { CandidatosService } from 'src/app/service/candidatos.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -8,6 +9,29 @@ import Swal from 'sweetalert2';
   styleUrls: ['./solicitud.component.scss']
 })
 export class SolicitudComponent {
+  candidatos: any[] = [];
+  selectedCandidato: any;
+
+  constructor(private candidatoService: CandidatosService, private router: Router) {
+    this.candidatos = this.candidatoService.candidatos;
+  }
+
+  createCandidato() {
+    this.candidatoService.selectedCandidato = null;
+    this.router.navigate(['candidato']);
+  }
+
+  editCandidato(candidato: any) {
+    this.candidatoService.selectedCandidato = candidato;
+    this.router.navigate(['candidato']);
+  }
+
+  deleteCandidato(id: number) {
+    this.candidatoService.deleteCandidato(id);
+    console.log(this.selectedCandidato.candidatos);
+  }
+
+
   confirmarEliminacion() {
     const swalWithBootstrapButtons = Swal.mixin({
       customClass: {
