@@ -10,13 +10,10 @@ export class CandidatosService {
   candidatos: any[] = [];
   selectedCandidato: any = null;
 
-<<<<<<< HEAD
   constructor(private http: HttpClient) {
-=======
-  constructor() { 
-    this.loadCandidatos();
-   }
 
+    this.loadCandidatos();
+  }
    private loadCandidatos() {
     this.candidatos = [];
     this.candidatos.push(
@@ -47,16 +44,12 @@ export class CandidatosService {
     );
    }
 
-  addCandidato(payload: any) {
-    this.candidatos.push(payload);
->>>>>>> jean
-  }
 
-  loadCandidatos() {
-    return this.http.get(this.url);
-    this.candidatos = [];
-    this.candidatos.push();
-  }
+  // loadCandidatos() {
+  //   return this.http.get(this.url);
+  //   this.candidatos = [];
+  //   this.candidatos.push();
+  // }
 
   addCandidato(payload: any) {
     let data = Object.values(payload)

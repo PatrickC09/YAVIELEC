@@ -23,8 +23,8 @@
             <input type="submit" value="Buscar">
           </form>
         </div>
-        <p-table [value]="candidatos" [tableStyle]="{'min-width': '50rem'}"
-         selectionMode="single" [(selection)]="selectedCandidato" dataKey="id">
+        <p-table [value]="data" [tableStyle]="{'min-width': '50rem'}"
+         selectionMode="single"  dataKey="id">
         <ng-template pTemplate="header">
               <tr>
                 <th scope="col">Logo</th>
@@ -33,33 +33,20 @@
                 <th scope="col">Estado</th>
                 <th scope="col">Acciones</th>
               </tr>
-<<<<<<< HEAD
-            </thead>
-            <tbody>
-              <tr *ngFor="let candidato of data">
-                <td>{{candidato.logo}}</td>
-                <td>{{candidato.nombre}}</td>
-                <td>{{candidato.nro_lista}}</td>
-                <td>{{candidato.estado}}</td>
-                <td>
-                    <a (click)="editarLista(candidato.id)">
-                    <button class="image-button">
-=======
             </ng-template>
             <ng-template pTemplate="body" let-item>
               <tr [pSelectableRow]="item">
-                <th scope="row">1</th>
+                <th scope="row">{{item.logo}}</th>
                 <td>{{item.nombre}}</td>
                 <td>{{item.nro_lista}}</td>
                 <td>{{item.estado}}</td>
                 <td>
                    
-                    <button class="image-button" (click)="editCandidato(item)">
->>>>>>> jean
+                    <button class="image-button" >
                         <img src="./assets/edit.png" alt="Texto alternativo de la imagen">
                       </button>
                     
-                      <button class="image-button" (click)="deleteCandidato(item.id_lista)">
+                      <button class="image-button" >
                         <img src="./assets/delete.png" alt="Texto alternativo de la imagen">
                       </button>
                     <button routerLink="/ver-candidato">

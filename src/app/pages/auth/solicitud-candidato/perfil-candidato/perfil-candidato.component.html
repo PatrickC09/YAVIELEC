@@ -17,7 +17,6 @@
                     <span>Volver atras</span>
                   </button>
         </div>
-<<<<<<< HEAD
         <div *ngFor="let candidato of data">
         <div class="contenedor-logo">
             <img src="https://pbs.twimg.com/profile_images/953015820669636609/9cv2czeD_400x400.jpg" alt="" class="logo-lista">
@@ -37,9 +36,7 @@
         </button>
         </div>
         </div>
-=======
-        <p-table [value]="candidatos" [tableStyle]="{'min-width': '50rem'}"
-         selectionMode="single" [(selection)]="selectedCandidato" dataKey="id">
+        <p-table [tableStyle]="{'min-width': '50rem'}" dataKey="id">
         <ng-template pTemplate="header">
               <tr>
                 <th scope="col">Logo</th>
@@ -62,7 +59,6 @@
           <button class="observaciones-b" routerLink="/observaciones">
             <span class="text">Observaciones</span>
         </button>
->>>>>>> jean
     </div>
 </body>
 </html>
