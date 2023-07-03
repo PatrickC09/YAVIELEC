@@ -10,8 +10,6 @@ import { MenuComponent } from './pages/auth/menu/menu.component';
 import { CandidatoComponent } from './pages/auth/candidato/candidato.component';
 import { RouterModule } from '@angular/router';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-<<<<<<< HEAD
-import { ResetPasswordComponent } from './pages/auth/login/reset-password/reset-password.component'
 import { HttpClientModule } from '@angular/common/http';
 import { UsuariosComponent } from './pages/auth/usuarios/usuarios.component';
 import { PerfilCandidatoComponent } from './pages/auth/solicitud-candidato/perfil-candidato/perfil-candidato.component';
@@ -19,16 +17,11 @@ import { ObservacionesComponent } from './pages/auth/solicitud-candidato/observa
 import { VerCandidatoComponent } from './pages/auth/solicitud-candidato/ver-candidato/ver-candidato.component';
 import { InfoCandidatoComponent } from './pages/auth/solicitud-candidato/info-candidato/info-candidato.component';
 import { SolicitudComponent } from './pages/auth/solicitud-candidato/solicitud/solicitud.component';
-
 import { TableModule } from 'primeng/table';
-
-
-
-=======
-import { ResetPasswordComponent } from './pages/auth/login/reset-password/reset-password.component';
 import { VistaListaComponent } from './pages/auth/listas/vista-lista/vista-lista.component';
 import { VistaIntegrantesComponent } from './pages/auth/listas/vista-integrantes/vista-integrantes.component'
->>>>>>> main
+import { SolicitudService } from './service/solicitud.service';
+import { ResetPasswordComponent } from './pages/auth/login/reset-password/reset-password.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +32,6 @@ import { VistaIntegrantesComponent } from './pages/auth/listas/vista-integrantes
     MenuComponent,
     PerfilCandidatoComponent,
     ObservacionesComponent,
-<<<<<<< HEAD
     VerCandidatoComponent,
     InfoCandidatoComponent,
     ObservacionesComponent,
@@ -47,30 +39,24 @@ import { VistaIntegrantesComponent } from './pages/auth/listas/vista-integrantes
     UsuariosComponent,
     SolicitudComponent,
 
-=======
     ResetPasswordComponent,
     VistaListaComponent,
+    VistaIntegrantesComponent,
+    VistaListaComponent,
     VistaIntegrantesComponent
->>>>>>> main
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule,
-
     FormsModule,
-    ReactiveFormsModule,
     FormsModule,
-<<<<<<< HEAD
-    ReactiveFormsModule,
+    HttpClientModule,
     HttpClientModule,
     TableModule,
-
-=======
     ReactiveFormsModule
->>>>>>> main
   ],
-  providers: [],
+  providers: [SolicitudService, SolicitudComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -12,29 +12,28 @@ import Swal from 'sweetalert2';
 export class CandidatoComponent {
   public archivoUrl: string = 'assets/reglamento.pdf';
 
-  nombre: string = ''; //cambio
-  datosPresiNombre: string = ''; //cambio
-  datosPresiCorreo: string = ''; //cambio
-  datosViceNombre: string = ''; //cambio
-  datosViceCorreo: string = ''; //cambio
-  slogan: string = ''; //cambio
-  datosSecretarioNombre: string = ''; //cambio
-  datosSecretarioCorreo: string = ''; //cambio
-  datosTesoreroNombre: string = ''; //cambio
-  datosTesoreroCorreo: string = ''; //cambio
-  nro_lista: number = 0; //cambio
-  datosVocal1Nombre: string = ''; //cambio
-  datosVocal1Correo: string = ''; //cambio
-  datosVocal2Nombre: string = ''; //cambio
-  datosVocal2Correo: string = ''; //cambio
-  datosVocal3Nombre: string = ''; //cambio
-  datosVocal3Correo: string = ''; //cambio
-  logo: string = ''; //cambio
-  propuesta: string = ''; //cambio
-  estado: boolean = false;
-  
-  form: FormGroup;
+  nombre: string = '';
+  datosPresidenteNombre: string = '';
+  datosPresidenteCorreo: string = '';
+  datosViceNombre: string = '';
+  datosViceCorreo: string = '';
+  eslogan: string = '';
+  datosSecretarioNombre: string = '';
+  datosSecretarioCorreo: string = '';
+  datosTesoreroNombre: string = '';
+  datosTesoreroCorreo: string = '';
+  numeroLista: number = 0;
+  datosVocal1Nombre: string = '';
+  datosVocal1Correo: string = '';
+  datosVocal2Nombre: string = '';
+  datosVocal2Correo: string = '';
+  datosVocal3Nombre: string = '';
+  datosVocal3Correo: string = '';
+  logoLista: string = '';
+  registrarPropuesta: string = '';
 
+  form: FormGroup;
+  data: any;
 
   constructor(private formBuilder: FormBuilder,
               private candidatosService: CandidatosService,
@@ -65,7 +64,6 @@ export class CandidatoComponent {
       })
     } else {
       this.form = formBuilder.group({
-        id: [0],
         nombre: ['', [Validators.required, Validators.minLength(2)]],
         datosPresiNombre: ['', [Validators.required, Validators.minLength(2)]],
         datosPresiCorreo: ['', [Validators.required, Validators.email]],
@@ -100,7 +98,7 @@ export class CandidatoComponent {
         },
         buttonsStyling: false
       })
-      
+
       swalWithBootstrapButtons.fire({
         title: 'Esta seguro de que quiere registrar esta lista?',
         icon: 'warning',
@@ -135,8 +133,8 @@ export class CandidatoComponent {
     }
     console.log(this.form.valid);
   }
-  
- 
+
+
 
   validateForm() {
     if (this.nombre === '' && this.nombre.length <= 3) {
@@ -145,14 +143,20 @@ export class CandidatoComponent {
   }
 
   addCandidato() {
-    this.candidatosService.addCandidato(this.form.value);
-    console.log(this.candidatosService.candidatos);
+    this.candidatosService.addCandidato(this.form.value).subscribe(
+      response =>{
+        console.log(response);
+      }
+    )
+    this.data = Object.values(this.form.value);
+    console.log("Desde componente" + this.data);
+
   }
 
-  updateCandidatos() {
-    this.candidatosService.updateCandidato(this.idField.value, this.form.value);
-    console.log(this.candidatosService.candidatos);
-  }
+  // updateCandidatos() {
+  //   this.candidatosService.updateCandidato(this.idField.value, this.form.value);
+  //   console.log(this.candidatosService.candidatos);
+  // }
 
   get idField() {
     return this.form.controls['id'];
@@ -161,5 +165,3 @@ export class CandidatoComponent {
 
 
 }
-
-
