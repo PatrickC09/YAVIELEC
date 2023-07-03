@@ -21,15 +21,17 @@ const routes: Routes = [
   { path: 'header', component: HeaderComponent },
   { path: 'menu', component: MenuComponent },
   { path: 'candidato', component: CandidatoComponent },
-{ path: 'solicitud', component: SolicitudComponent/*,canActivate:[PermisosGuard]*/},
+  { path: 'solicitud', component: SolicitudComponent/*,canActivate:[PermisosGuard]*/ },
   { path: 'perfil-candidato', component: PerfilCandidatoComponent },
   { path: 'observaciones', component: ObservacionesComponent },
   { path: 'ver-candidato', component: VerCandidatoComponent },
   { path: 'info-candidato', component: InfoCandidatoComponent },
 
-  { path: 'resetearContraseña', component:ResetPasswordComponent },
+  { path: 'resetearContraseña', component: ResetPasswordComponent },
   { path: 'usuarios', component: UsuariosComponent },
-  { path: '', redirectTo: '/login', pathMatch: 'full'},
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: 'vista-integrantes', component: VistaIntegrantesComponent},
+  {path: 'vista-lista', component: VistaListaComponent}
 ];
 
 @NgModule({
